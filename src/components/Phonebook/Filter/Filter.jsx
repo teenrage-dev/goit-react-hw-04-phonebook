@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../Phonebook.css';
+import css from '../Filter/Filter.module.css';
 
 export const Filter = ({ filter, handleChangeFilterByName }) => {
   return (
     <>
-      <label htmlFor="filter" className="phonebook_name phonebook_name__filter">
+      <label
+        htmlFor="filter"
+        className={`${css.phonebook_name} ${css.phonebook_name__filter}`}
+      >
         Find contacts by name
       </label>
       <input
-        className="phonebook__input"
+        className={css.phonebook__input}
         type="text"
         name="filter"
         value={filter}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import '../Phonebook.css';
+import css from '../ContactForm/ContactForm.module.css';
 
 export const ContactForm = ({ handleSubmit, showMessage }) => {
   const [name, setName] = useState('');
@@ -37,13 +37,13 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
       onSubmit={event => {
         validateForm(event, handleSubmit);
       }}
-      className="phonebook__form"
+      className={css.phonebook__form}
     >
-      <label htmlFor="name" className="phonebook_name">
+      <label htmlFor="name" className={css.phonebook_name}>
         Name
       </label>
       <input
-        className="phonebook__input"
+        className={css.phonebook__input}
         type="text"
         name="name"
         value={name}
@@ -52,11 +52,11 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-      <label htmlFor="number" className="phonebook_name">
+      <label htmlFor="number" className={css.phonebook_name}>
         Number
       </label>
       <input
-        className="phonebook__input"
+        className={css.phonebook__input}
         type="tel"
         name="number"
         value={number}
@@ -65,7 +65,7 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-      <button type="submit" className="phonebook_btn">
+      <button type="submit" className={css.phonebook_btn}>
         Add contact
       </button>
     </form>

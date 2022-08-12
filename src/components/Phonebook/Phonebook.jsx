@@ -1,4 +1,4 @@
-import './Phonebook.css';
+import css from './Phonebook.module.css';
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
@@ -80,10 +80,10 @@ export const Phonebook = () => {
   const renderList = getFIlteredContacts();
 
   return (
-    <div className="phonebook_box">
+    <div className={css.phonebook_box}>
       <h2>Phonebook</h2>
       <ContactForm handleSubmit={handleSubmit} showMessage={showMessage} />
-      <div className="phonebook__contacts">
+      <div className={css.phonebook__contacts}>
         <h2>Contacts</h2>
         <Filter
           filter={filter}

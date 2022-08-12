@@ -1,20 +1,20 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import '../Phonebook.css';
+import css from '../ContactList/ContactList.module.css';
 
 export const ContactList = ({ renderList, onDeleteContact }) => {
   // console.log(renderList);
   return (
     <>
-      <ul className="phonebook__list">
+      <ul className={css.phonebook__list}>
         {renderList.map(contact => (
-          <li key={nanoid()} className="phonebook__item">
-            <span className="phonebook__item-text">
+          <li key={nanoid()} className={css.phonebook__item}>
+            <span className={css.phonebook__item_text}>
               {contact.name}: {contact.number}
             </span>
             <button
-              className="phonebook_btn"
+              className={css.phonebook_btn}
               onClick={() => onDeleteContact(contact)}
             >
               Delete
